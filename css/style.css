@@ -1,0 +1,17 @@
+.body {
+    background-image: url(../IMG/FONDO.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Busca {
+    text-align: end;
+    font-size: 20px;
+    background-color: rgba(165, 42, 42, 0.559);
+    padding: 20px;
+}
+
+.Linkbusco {
+    text-decoration: none;
+    color: black;
+}
