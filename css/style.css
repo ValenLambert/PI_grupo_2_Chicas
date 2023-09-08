@@ -1,17 +1,27 @@
 .body {
-    background-color:rgb(12, 72, 72);
+    background-color:rgb(16, 104, 104);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.header {
+    background-color: rgb(68, 171, 171);
+    padding: 20px;
+   
+    
 }
 
 .Busca {
     text-align: end;
     font-size: 20px;
-    background-color: rgba(165, 42, 42, 0.559);
-    padding: 20px;
 }
 
 .Linkbusco {
     text-decoration: none;
     color: black;
+}
+
+.logo {   
+    text-align: start;
+    margin: -2px;
 }
