@@ -1,17 +1,45 @@
 .body {
-    background-color:rgb(12, 72, 72);
+    background-color: rgb(12, 72, 72);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Work Sans', sans-serif;
 }
 
-.Busca {
-    text-align: end;
-    font-size: 20px;
-    background-color: rgba(165, 42, 42, 0.559);
-    padding: 20px;
+
+/*titulos de genero*/
+.titulo {
+    justify-content: center;
+    display: flex;
+    align-self: center;
+    color: rgb(252, 252, 242)
+    
 }
 
-.Linkbusco {
-    text-decoration: none;
-    color: black;
+
+.main{
+    display: flex;
+    justify-content: center;
+
+}
+
+.generos {
+    background-color: rgb(253, 253, 240);
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: row;
+    display: flex;
+    padding: 10%;
+    
+}
+
+.ul1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.ul2{
+
 }
