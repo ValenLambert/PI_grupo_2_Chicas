@@ -1,45 +1,136 @@
 .body {
-    background-color: rgb(12, 72, 72);
+    background-color: #142850;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Maven Pro', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Work Sans', sans-serif;
+    margin: 0px;
+   
 }
 
-
-/*titulos de genero*/
-.titulo {
-    justify-content: center;
+.header {
+    background-color: rgba(10, 83, 218, 0.563);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 13px;
     display: flex;
-    align-self: center;
-    color: rgb(252, 252, 242)
-    
-}
-
-
-.main{
-    display: flex;
-    justify-content: center;
-
-}
-
-.generos {
-    background-color: rgb(253, 253, 240);
     justify-content: space-between;
-    list-style: none;
-    flex-direction: row;
+  
+}
+
+.Busca {
+    font-size: 30px;
     display: flex;
-    padding: 10%;
+    align-items: center;
+    padding: 15px;
+
+}
+
+
+.logo {   
+    text-align: start;
+    margin: -2px;
     
 }
 
-.ul1{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.ul2{
 
+.ListaMain {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-around;
+    text-align: end;
+    justify-content: end;
+
+}
+
+.textobusqueda {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#video {
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 20px;
+}
+.Valoradas {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.padreValoradas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 50px 120px;
+    padding: 90px;
+}
+
+
+.peliculasvaloradas {
+    background-color:  rgba(10, 83, 218, 0.563);
+    padding: 15px 20px;
+    margin: -101px;
+    width: 286px;
+    text-align: center;
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 20px;
+}
+
+.imagen {
+    max-width: 250px;
+    text-align: center;
+    
+}
+
+
+.detallepelicula {
+    width: 70px;
+    padding: 405px 500px;
+    background-color: rgba(100, 148, 237, 0.63);
+    border-color: rgb(28, 67, 167);
+    margin: 200px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    background-color: rgba(100, 148, 237, 0.63);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Titulos {
+    color: aliceblue;
+    margin-left: 106px;
+}
+
+.titulospelicula {
+    color: #00A8CC;
+    font-size: 25px;
+    margin: 10px 0px 0px 0px;
+}
+
+.textofooter {
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 15px;
 }
