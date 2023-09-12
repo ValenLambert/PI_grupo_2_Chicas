@@ -7,7 +7,7 @@
 }
 
 .header {
-    background-color: rgba(10, 83, 218, 0.563);
+    background-color:rgba(100, 148, 237, 0.63);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px 13px;
@@ -96,19 +96,6 @@
 }
 
 
-.detallepelicula {
-    width: 70px;
-    padding: 405px 500px;
-    background-color: rgba(100, 148, 237, 0.63);
-    border-color: rgb(28, 67, 167);
-    margin: 200px;
-    margin-top: 14px;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .footer {
     background-color: rgba(100, 148, 237, 0.63);
     background-repeat: no-repeat;
@@ -133,4 +120,17 @@
     color: aliceblue;
     text-decoration: none;
     margin-top: 15px;
+}
+
+.detallepelicula {
+    max-width: 70px;
+    max-height: 0px;
+    padding: 305px 450px;
+    background-color: rgba(100, 148, 237, 0.63);
+    border-color: rgb(28, 67, 167);
+    margin: 21px 240px;
+}
+
+.imagenreyleon {
+    max-width: 250px;
 }
