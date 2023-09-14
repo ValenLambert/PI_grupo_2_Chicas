@@ -129,7 +129,6 @@
     max-width: 1200px; 
     margin: 0 auto; 
     margin-top: 20px;
-    box-sizing: border-box; 
     border: 1px solid rgba(61, 61, 171, 0.688);
     display: flex; 
     align-items: center;
@@ -146,7 +145,6 @@
     padding: 20px; 
     max-width: 1200px; 
     margin: 0 auto; 
-    box-sizing: border-box; 
     border: 1px solid rgba(61, 61, 171, 0.688);
     display: flex; 
     align-items: center;
@@ -160,6 +158,7 @@
 .detallepelicula_div {
     display: flex; 
     align-items: center; 
+    width: 100%;
 }
 
 .detallepelicula_div img {
@@ -173,4 +172,57 @@
 .Texto1 {
     
     background-color: rgba(0, 0, 255, 0.35);
+}
+
+.Estreno {
+    text-align: end;
+}
+
+/* telefono */
+@media (max-width: 420px){
+    .body {
+      padding: 0px;
+    }
+    .navbar {
+      display: none;
+    
+    }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .Titulos {
+    margin-left: 15px;
+ }
+  .padreValoradas {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    margin-bottom: -185px;
+  }
+
+  .peliculasvaloradas {
+    margin-bottom: 120px;
+  }
+ 
+  .Padredetalle, .Padredetalle2 {
+    max-width: 294px;
+  }
+  .detallepelicula_div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.detallepelicula_div img {
+    max-width: 300px;
+    margin-right: 0px auto; 
+}
+
+.fa-solid, .fas {
+    display: none;
+}
 }
