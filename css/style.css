@@ -93,6 +93,8 @@ font-family: 'Work Sans', sans-serif;
     justify-content: center;
     display: flex;
     align-items: center;
+    width: 85%;
+    height: 340px;
     
 }
 
@@ -133,17 +135,17 @@ font-family: 'Work Sans', sans-serif;
     padding: 90px;
 }
 
-.padreGenero{
+.padreGenero {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 8px;
     align-items: center;
     max-width: 100%;
-    margin: 24px 240px;
+    margin: -1px 181px;
     padding: 0px;
-    
 }
+
 .GeneroPeliculas {
     background-color:  rgba(10, 83, 218, 0.563);
     padding: 10px 20px;
@@ -157,9 +159,25 @@ font-family: 'Work Sans', sans-serif;
     color: rgb(222, 239, 254);
     font-size: 24px;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
+}
 
-    
+.GeneroPeliculasDetalle {
+    background-color: rgba(10, 83, 218, 0.563);
+    padding: 10px 20px;
+    width: 137px;
+    height: 16px;
+    text-align: center;
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 18px;
+    list-style: none;
+    color: rgb(222, 239, 254);
+    font-size: 14px;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
 }
 
 a{
@@ -207,16 +225,23 @@ a::before{
     
 }
 
-
 .footer {
-    background-color: rgba(100, 148, 237, 0.63);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 20px;
     display: flex;
     justify-content: space-evenly;
 }
 
+.footer1 {
+    background-color: rgba(100, 148, 237, 0.63);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+
+.Integrantes {
+    color: aliceblue;
+    text-align: center;
+    font-size: 15px;
+}
 .Titulos {
     color: aliceblue;
     margin-left: 106px;
@@ -231,6 +256,12 @@ a::before{
 .titulospelicula {
     color: #00A8CC;
     font-size: 25px;
+    margin: 10px 0px 0px 0px;
+}
+
+.tituloestreno {
+    color: #00819e;
+    font-size: 15px;
     margin: 10px 0px 0px 0px;
 }
 
@@ -322,6 +353,7 @@ a::before{
 
  .Titulos {
     margin-left: 15px;
+    font-size: 25px;
  }
   .padreValoradas {
     display: flex;
@@ -357,11 +389,16 @@ a::before{
 
 }
 
-
-
-
-
-.fa-solid, .fas {
+#Arrow {
     display: none;
+}
+
+.Textos123 {
+    width: 300px;
+}
+
+.Titulosbusqueda {
+    margin-left: 25px;
+    font-size: 25px;
 }
 }
