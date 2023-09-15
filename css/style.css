@@ -191,7 +191,6 @@ a::before{
 
 
 
-
 .peliculasvaloradas {
     background-color:  rgba(10, 83, 218, 0.563);
     padding: 15px 20px;
@@ -224,6 +223,11 @@ a::before{
     text-decoration: underline;
 }
 
+.Titulosbusqueda {
+    color: aliceblue;
+    margin-left: 106px;
+    text-decoration: none;
+}
 .titulospelicula {
     color: #00A8CC;
     font-size: 25px;
