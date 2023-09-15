@@ -110,6 +110,10 @@ font-family: 'Work Sans', sans-serif;
 
 }
 
+.Noresultados{
+    display: none;
+}
+
 .Valoradas {
     display: flex;
     margin-top: 20px;
@@ -279,6 +283,7 @@ a::before{
     display: flex;
     flex-direction: column;
     width: 682px;
+    height: 400px;
     justify-content: space-between
 }
 

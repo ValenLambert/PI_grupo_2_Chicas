@@ -4,46 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles pelicula y series</title>
-    <link rel="stylesheet" href="../PI_grupo_2_Chicas/css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&family=Open+Sans&family=Raleway&family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&family=Open+Sans&family=Raleway&family=Work+Sans&display=swap" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="../PI_grupo_2_Chicas/css/style.css">
 </head>
 <body class="body">
     <!--HEADER-->
     <header class="header">
- <section class="Busca">
-    <img class= "logo" src="../PI_grupo_2_Chicas/IMG/PhotoRoom_20230901_122927.PNG" alt="Logo" height="60px">
-</section>
- <section class="ListaMain">
-    <ul class="ListaMain">
-    <li> <input type="text" name="" id="Buscar">
-    <i class="fa-solid fa-magnifying-glass"></i> </li>
-     
-    <li> 
-    <a href="./home.html">Peliculas populares</a> 
-    <i class="fa-solid fa-film"></i></li>
+        <section class="Busca">
+           <img class= "logo" src="../PI_grupo_2_Chicas/IMG/PhotoRoom_20230901_122927.PNG" alt="Logo" height="60px">
+       </section>
+        <section class="ListaMain">
+           <ul class="ListaMain">
+           <li> 
+               <form action="../PI_grupo_2_Chicas/busqueda.html">
+               <input type="text" name="" id="Buscar">
+                </form>
+           <i class="fa-solid fa-magnifying-glass"></i> </li>
+           <li> <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+           </li>
+           <li> 
+           </span>
+           <a class="textobusqueda" href="./home.html">Peliculas populares</a> 
+           <i class="fa-solid fa-film"></i></li>
+       
+           <li> 
+           <a class="textobusqueda" href="./home.html">Series populares</a> <i class="fa-solid fa-video"></i></li>
+       
+           <li>
+           <a class="textobusqueda" href="./genero.html">Generos de peliculas y series</a> <i class="fa-solid fa-file"></i></li>
+       
+           <li>
+           <a class="textobusqueda" href="./favoritos.html">Peliculas y series favoritas</a><i class="fa-solid fa-star"></i></li>
+           </ul>
+        </section>
+        
+         </header>
 
-    <li> 
-    <a href="./home.html">Series populares</a> <i class="fa-solid fa-video"></i></li>
+  <!-- Detalle de la pelicula-->
+  <section class="Padredetalle">
+        <div class="detallepelicula_div">
+            <img class="imagenreyleon" src="../PI_grupo_2_Chicas/IMG/posters/rey leon.jpg" alt="Rey Leon">
+            <div class="Textos123">
+                <h2 class="Texto1">Pelicula:</h2>
+        
+                <h2 class="Texto2" >El Rey Leon</h2>
+        
+                <h2 class="Texto3">Un clásico de Disney</h2>
+        
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+        </div>
+    
 
-    <li>
-    <a href="./genero.html">Generos de peliculas y series</a> <i class="fa-solid fa-file"></i></li>
-
-    <li>
-    <a href="./favoritos.html">Peliculas y series favoritas</a><i class="fa-solid fa-star"></i></li>
-    </ul>
+    </section>
+  <section class="Padredetalle2">
+         <div class="Estrenodetalle">
+            <p class="Estreno">Fecha de estreno: 7 de julio de 1994</p>
+           <p>Al 89% le gustó esta película</p>
+          <p>Duración: 88m</p>
+          <p>Géneros: Infantil, Animación, Aventura</p>
+          <p>Tras la muerte de su padre, Simba vuelve a enfrentar a su malvado tío, Scar, y reclamar el trono de rey.</p>
+          <button>Agregar a favoritos</button>
+         </div>
  </section>
- <!-- Detalle de la serie-->
  
-  </header>
-
-      <!--FOOTER-->
-      <footer class="footer">
+    <!--FOOTER-->
+    <footer class="footer">
         <a class="textofooter" href="mailto:valenclambert@gmail.com">Consultas <i class="fa-sharp fa-solid fa-envelope fa-fade"></i></a>
         <img class= "logo" src="../PI_grupo_2_Chicas/IMG/PhotoRoom_20230901_122927.PNG" alt="Logo" height="60px">
        
@@ -57,6 +82,6 @@
         </section>
        
        </footer>
-    
+  
 </body>
 </html>
