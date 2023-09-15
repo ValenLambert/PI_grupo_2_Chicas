@@ -357,11 +357,62 @@ a::before{
 
 }
 
-
-
-
-
 .fa-solid, .fas {
     display: none;
 }
+
+.mediaTitulo {
+    display: flex;
+    margin-left:0px ;
 }
+
+.mainGenero {
+    margin-left: 0px;
+    padding:0px;
+
+
+}
+
+.cadaGenero{
+    width: 100%;
+    padding: 0px;
+    flex-direction: column;
+
+}
+.padreGenero{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
+    max-width: 100%;
+    width: 100%;
+    margin: 0px;
+    flex-direction: column;
+}
+
+.GeneroPeliculas{
+    background-color:  rgba(10, 83, 218, 0.563);
+    padding: 10px 5px;
+    margin: 22px;
+    width: 340px;
+    height: 40px;
+    text-align: center;
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 18px;
+    list-style: none;
+    color: rgb(222, 239, 254);
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo{
+    color:rgb(209, 229, 246);
+    text-align: center;
+    height: 2vh;
+    margin: 14px;
+}
+
+}
+
