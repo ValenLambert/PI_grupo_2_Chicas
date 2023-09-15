@@ -64,6 +64,13 @@ font-family: 'Work Sans', sans-serif;
     justify-content: center;
 }
 
+.fotoheader {
+    width: 1220px;
+    height: 310px;
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 20px;
+}
+
 #video {
     border: solid 5px rgba(61, 61, 171, 0.688);
     border-radius: 20px;
@@ -228,13 +235,13 @@ a::before{
 .Padredetalle {
     background-color: rgba(10, 83, 218, 0.563);
     padding: 20px; 
-    max-width: 1200px; 
+    max-width: 1000px; 
     margin: 0 auto; 
     margin-top: 20px;
     border: 1px solid rgba(61, 61, 171, 0.688);
     display: flex; 
     align-items: center;
-
+    flex: wrap;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-top:  solid 5px rgba(76, 122, 207, 0.563);
@@ -245,8 +252,9 @@ a::before{
 .Padredetalle2 {
     background-color: rgba(76, 122, 207, 0.563);
     padding: 20px; 
-    max-width: 1200px; 
+    max-width: 1000px; 
     margin: 0 auto; 
+    margin-bottom: 20px;
     border: 1px solid rgba(61, 61, 171, 0.688);
     display: flex; 
     align-items: center;
@@ -267,13 +275,20 @@ a::before{
     max-width: 300px;
     margin-right: 20px; 
 }
-.Textos1234 {
+.Textos123 {
     display: flex;
-
+    flex-direction: column;
+    width: 682px;
+    justify-content: space-between
 }
+
 .Texto1 {
-    
-    background-color: rgba(0, 0, 255, 0.35);
+    text-align: start ;
+    background-color: rgba(0, 0, 255, 0.271);
+}
+
+.Estrenodetalle{
+    width: 992px;
 }
 
 .Estreno {
