@@ -163,6 +163,22 @@
     align-items: center;
 }
 
+.GeneroPeliculasDetalle {
+    background-color: rgba(10, 83, 218, 0.563);
+    padding: 10px 20px;
+    width: 137px;
+    height: 16px;
+    text-align: center;
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 18px;
+    list-style: none;
+    color: rgb(222, 239, 254);
+    font-size: 14px;
+}
+.btns {
+    display: flex;
+    flex-direction: row;
+}
 
 a {
     text-decoration: double;
