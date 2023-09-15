@@ -4,22 +4,22 @@
     background-size: cover;
     margin: 0px;
     font-family: 'Maven Pro', sans-serif;
-font-family: 'Mooli', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Work Sans', sans-serif;
+    font-family: 'Mooli', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Work Sans', sans-serif;
 
-   
+
 }
 
 .header {
-    background-color:rgba(100, 148, 237, 0.63);
+    background-color: rgba(100, 148, 237, 0.63);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px 13px;
     display: flex;
     justify-content: space-between;
-  
+
 }
 
 .Busca {
@@ -31,12 +31,12 @@ font-family: 'Work Sans', sans-serif;
 }
 
 
-.logo {   
+.logo {
     text-align: start;
     margin: -2px;
     width: 98px;
     height: 80px;
-    
+
 }
 
 
@@ -77,6 +77,7 @@ font-family: 'Work Sans', sans-serif;
     max-width: 1300px;
     height: 340px;
 }
+
 .video {
     border: solid 5px rgba(61, 61, 171, 0.688);
     border-radius: 20px;
@@ -93,24 +94,26 @@ font-family: 'Work Sans', sans-serif;
     justify-content: center;
     display: flex;
     align-items: center;
-    
+    width: 85%;
+    height: 340px;
+
 }
 
 
 .titulos_genero {
     color: rgb(222, 239, 254);
     align-items: center;
-    display: flex;  
-  justify-content: center;  
-  align-items: center;  
-  height: 10vh;
-  text-decoration: solid;
-  font-weight: bold;
-  font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    text-decoration: solid;
+    font-weight: bold;
+    font-size: 48px;
 
 }
 
-.Noresultados{
+.Noresultados {
     display: none;
 }
 
@@ -121,7 +124,7 @@ font-family: 'Work Sans', sans-serif;
     justify-content: center;
 }
 
-.padreValoradas{
+.padreValoradas {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -133,19 +136,19 @@ font-family: 'Work Sans', sans-serif;
     padding: 90px;
 }
 
-.padreGenero{
+.padreGenero {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 8px;
     align-items: center;
     max-width: 100%;
-    margin: 24px 240px;
+    margin: -1px 181px;
     padding: 0px;
-    
 }
+
 .GeneroPeliculas {
-    background-color:  rgba(10, 83, 218, 0.563);
+    background-color: rgba(10, 83, 218, 0.563);
     padding: 10px 20px;
     margin: 22px;
     width: 348px;
@@ -158,33 +161,35 @@ font-family: 'Work Sans', sans-serif;
     font-size: 24px;
     justify-content: center;
     align-items: center;
-
-    
 }
 
-a{
-    text-decoration:double;
+
+a {
+    text-decoration: double;
     color: #76e3fc;
 }
-a::before{
+
+a::before {
     text-decoration: none;
 }
-:active{
+
+:active {
     text-decoration: none;
 }
-a::before{
+
+a::before {
     text-decoration: none;
 }
 
 
-#titulo{
-    color:rgb(209, 229, 246);
+#titulo {
+    color: rgb(209, 229, 246);
     font-style: italic;
     font-style: underline;
 }
 
 .titulo {
-    color:rgb(209, 229, 246);
+    color: rgb(209, 229, 246);
     margin-left: 106px;
     height: 2vh;
 }
@@ -192,7 +197,7 @@ a::before{
 
 
 .peliculasvaloradas {
-    background-color:  rgba(10, 83, 218, 0.563);
+    background-color: rgba(10, 83, 218, 0.563);
     padding: 15px 20px;
     margin: -101px;
     width: 286px;
@@ -204,17 +209,25 @@ a::before{
 .imagen {
     max-width: 250px;
     text-align: center;
-    
+
 }
 
-
 .footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer1 {
     background-color: rgba(100, 148, 237, 0.63);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
-    display: flex;
-    justify-content: space-evenly;
+}
+
+.Integrantes {
+    color: aliceblue;
+    text-align: center;
+    font-size: 15px;
 }
 
 .Titulos {
@@ -228,9 +241,16 @@ a::before{
     margin-left: 106px;
     text-decoration: none;
 }
+
 .titulospelicula {
     color: #00A8CC;
     font-size: 25px;
+    margin: 10px 0px 0px 0px;
+}
+
+.tituloestreno {
+    color: #00819e;
+    font-size: 15px;
     margin: 10px 0px 0px 0px;
 }
 
@@ -242,29 +262,29 @@ a::before{
 
 .Padredetalle {
     background-color: rgba(10, 83, 218, 0.563);
-    padding: 20px; 
-    max-width: 1000px; 
-    margin: 0 auto; 
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
     margin-top: 20px;
     border: 1px solid rgba(61, 61, 171, 0.688);
-    display: flex; 
+    display: flex;
     align-items: center;
     flex: wrap;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-top:  solid 5px rgba(76, 122, 207, 0.563);
-    border-left:  solid 5px rgba(76, 122, 207, 0.563);
-    border-right: solid 5px  rgba(76, 122, 207, 0.563);
+    border-top: solid 5px rgba(76, 122, 207, 0.563);
+    border-left: solid 5px rgba(76, 122, 207, 0.563);
+    border-right: solid 5px rgba(76, 122, 207, 0.563);
 }
 
 .Padredetalle2 {
     background-color: rgba(76, 122, 207, 0.563);
-    padding: 20px; 
-    max-width: 1000px; 
-    margin: 0 auto; 
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
     margin-bottom: 20px;
     border: 1px solid rgba(61, 61, 171, 0.688);
-    display: flex; 
+    display: flex;
     align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -274,15 +294,16 @@ a::before{
 }
 
 .detallepelicula_div {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     width: 100%;
 }
 
 .detallepelicula_div img {
     max-width: 300px;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
+
 .Textos123 {
     display: flex;
     flex-direction: column;
@@ -292,11 +313,11 @@ a::before{
 }
 
 .Texto1 {
-    text-align: start ;
+    text-align: start;
     background-color: rgba(0, 0, 255, 0.271);
 }
 
-.Estrenodetalle{
+.Estrenodetalle {
     width: 992px;
 }
 
@@ -305,114 +326,124 @@ a::before{
 }
 
 /* telefono */
-@media (max-width: 420px){
+@media (max-width: 420px) {
     .body {
-      padding: 0px;
+        padding: 0px;
     }
+
     .navbar {
-      display: none;
+        display: none;
+
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Titulos {
+        margin-left: 15px;
+        font-size: 25px;
+    }
+
+    .padreValoradas {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        margin-bottom: -185px;
+    }
+
+    .peliculasvaloradas {
+        margin-bottom: 120px;
+    }
+
+    .Padredetalle,
+    .Padredetalle2 {
+        max-width: 294px;
+    }
+
+    .detallepelicula_div {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .detallepelicula_div img {
+        max-width: 300px;
+        margin-right: 0px auto;
+    }
+
+    .ul1 {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 120px;
+        padding: 900px;
+
+    }
+
+    #Arrow {
+        display: none;
+    }
+
+    .fa-solid, .fas {
+        display: none;
+    }
+    
+    .mediaTitulo {
+        display: flex;
+        margin-left:0px ;
+    }
+    
+    .mainGenero {
+        margin-left: 0px;
+        padding:0px;
+    }
+    
+    .fa-solid, .fas {
+        display: none;
+    }
+    
+    .cadaGenero{
+        width: 100%;
+        padding: 0px;
+        flex-direction: column;
     
     }
-  
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
- .Titulos {
-    margin-left: 15px;
- }
-  .padreValoradas {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    margin-bottom: -185px;
-  }
-
-  .peliculasvaloradas {
-    margin-bottom: 120px;
-  }
- 
-  .Padredetalle, .Padredetalle2 {
-    max-width: 294px;
-  }
-  .detallepelicula_div {
-    display: flex;
-    flex-direction: column;
-
+    .padreGenero{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: start;
+        max-width: 100%;
+        width: 100%;
+        margin: 0px;
+        flex-direction: column;
+    }
+    
+    .GeneroPeliculas{
+        background-color:  rgba(10, 83, 218, 0.563);
+        padding: 10px 5px;
+        margin: 22px;
+        width: 340px;
+        height: 40px;
+        text-align: center;
+        border: solid 5px rgba(61, 61, 171, 0.688);
+        border-radius: 18px;
+        list-style: none;
+        color: rgb(222, 239, 254);
+        font-size: 24px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .titulo{
+        color:rgb(209, 229, 246);
+        text-align: center;
+        height: 2vh;
+        margin: 14px;
+    }
+    
 }
-
-.detallepelicula_div img {
-    max-width: 300px;
-    margin-right: 0px auto; 
-}
-
-.ul1{
-    flex-direction:row;
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 120px;
-    padding: 900px;
-
-}
-
-.fa-solid, .fas {
-    display: none;
-}
-
-.mediaTitulo {
-    display: flex;
-    margin-left:0px ;
-}
-
-.mainGenero {
-    margin-left: 0px;
-    padding:0px;
-
-
-}
-
-.cadaGenero{
-    width: 100%;
-    padding: 0px;
-    flex-direction: column;
-
-}
-.padreGenero{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: start;
-    max-width: 100%;
-    width: 100%;
-    margin: 0px;
-    flex-direction: column;
-}
-
-.GeneroPeliculas{
-    background-color:  rgba(10, 83, 218, 0.563);
-    padding: 10px 5px;
-    margin: 22px;
-    width: 340px;
-    height: 40px;
-    text-align: center;
-    border: solid 5px rgba(61, 61, 171, 0.688);
-    border-radius: 18px;
-    list-style: none;
-    color: rgb(222, 239, 254);
-    font-size: 24px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.titulo{
-    color:rgb(209, 229, 246);
-    text-align: center;
-    height: 2vh;
-    margin: 14px;
-}
-
-}
-
