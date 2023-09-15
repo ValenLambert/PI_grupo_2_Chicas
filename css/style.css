@@ -173,17 +173,103 @@
     margin-top: 15px;
 }
 
-.detallepelicula {
-    max-width: 70px;
-    max-height: 0px;
-    padding: 305px 450px;
-    background-color: rgba(100, 148, 237, 0.63);
-    border-color: rgb(28, 67, 167);
-    margin: 21px 240px;
+.Padredetalle {
+    background-color: rgba(10, 83, 218, 0.563);
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    margin-top: 20px;
+    border: 1px solid rgba(61, 61, 171, 0.688);
+    display: flex; 
+    align-items: center;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top:  solid 5px rgba(76, 122, 207, 0.563);
+    border-left:  solid 5px rgba(76, 122, 207, 0.563);
+    border-right: solid 5px  rgba(76, 122, 207, 0.563);
 }
 
-.imagenreyleon {
-    max-width: 250px;
+.Padredetalle2 {
+    background-color: rgba(76, 122, 207, 0.563);
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    border: 1px solid rgba(61, 61, 171, 0.688);
+    display: flex; 
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: solid 5px rgba(10, 83, 218, 0.563);
+    border-left: solid 5px rgba(10, 83, 218, 0.563);
+    border-right: solid 5px rgba(10, 83, 218, 0.563);
+}
+
+.detallepelicula_div {
+    display: flex; 
+    align-items: center; 
+    width: 100%;
+}
+
+.detallepelicula_div img {
+    max-width: 300px;
+    margin-right: 20px; 
+}
+.Textos1234 {
+    display: flex;
+
+}
+.Texto1 {
+    
+    background-color: rgba(0, 0, 255, 0.35);
+}
+
+.Estreno {
+    text-align: end;
+}
+
+/* telefono */
+@media (max-width: 420px){
+    .body {
+      padding: 0px;
+    }
+    .navbar {
+      display: none;
+    
+    }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .Titulos {
+    margin-left: 15px;
+ }
+  .padreValoradas {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    margin-bottom: -185px;
+  }
+
+  .peliculasvaloradas {
+    margin-bottom: 120px;
+  }
+ 
+  .Padredetalle, .Padredetalle2 {
+    max-width: 294px;
+  }
+  .detallepelicula_div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.detallepelicula_div img {
+    max-width: 300px;
+    margin-right: 0px auto; 
 }
 
 .ul1{
@@ -198,3 +284,8 @@
 
 
 
+
+.fa-solid, .fas {
+    display: none;
+}
+}
