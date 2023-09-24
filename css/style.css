@@ -175,6 +175,7 @@
     color: rgb(222, 239, 254);
     font-size: 14px;
 }
+
 .btns {
     display: flex;
     flex-direction: row;
@@ -403,31 +404,34 @@ a::before {
         display: none;
     }
 
-    .fa-solid, .fas {
+    .fa-solid,
+    .fas {
         display: none;
     }
-    
+
     .mediaTitulo {
         display: flex;
-        margin-left:0px ;
+        margin-left: 0px;
     }
-    
+
     .mainGenero {
         margin-left: 0px;
-        padding:0px;
+        padding: 0px;
     }
-    
-    .fa-solid, .fas {
+
+    .fa-solid,
+    .fas {
         display: none;
     }
-    
-    .cadaGenero{
+
+    .cadaGenero {
         width: 100%;
         padding: 0px;
         flex-direction: column;
-    
+
     }
-    .padreGenero{
+
+    .padreGenero {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -437,9 +441,9 @@ a::before {
         margin: 0px;
         flex-direction: column;
     }
-    
-    .GeneroPeliculas{
-        background-color:  rgba(10, 83, 218, 0.563);
+
+    .GeneroPeliculas {
+        background-color: rgba(10, 83, 218, 0.563);
         padding: 10px 5px;
         margin: 22px;
         width: 340px;
@@ -454,12 +458,30 @@ a::before {
         align-items: center;
         flex-direction: column;
     }
-    
-    .titulo{
-        color:rgb(209, 229, 246);
+
+    .titulo {
+        color: rgb(209, 229, 246);
         text-align: center;
         height: 2vh;
         margin: 14px;
     }
-    
+
+    .Estrenodetalle {
+        width: 297px;
+    }
+
+    .Textos123 {
+        width: 285px;
+        justify-content: normal;
+        height: 232px;
+    }
+
+    .GeneroPeliculasDetalle {
+        padding: 1px 20px;
+        width: 73px;
+    }
+
+    .Titulosbusqueda {
+        margin-left: 29px;
+    }
 }
