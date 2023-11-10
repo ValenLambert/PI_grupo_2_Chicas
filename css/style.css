@@ -132,8 +132,8 @@
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
-    margin: 50px 120px;
-    padding: 90px;
+    margin: 80px 138px;
+    padding: 80px;
 }
 
 .padreGenero {
@@ -215,18 +215,18 @@ a::before {
 
 .peliculasvaloradas {
     background-color: rgba(10, 83, 218, 0.563);
-    padding: 15px 20px;
-    margin: -101px;
-    width: 286px;
+    padding: 15px 8px;
+    margin: -122px;
+    width: 225px;
+    height: 334px;
     text-align: center;
     border: solid 5px rgba(61, 61, 171, 0.688);
     border-radius: 20px;
 }
 
 .imagen {
-    max-width: 250px;
+    max-width: 160px;
     text-align: center;
-
 }
 
 .footer {
