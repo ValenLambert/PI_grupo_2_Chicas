@@ -5,6 +5,7 @@ let pelisMasVisto = `https://api.themoviedb.org/3/movie/popular?api_key=42737f60
 
 let seriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=42737f60c529bfe7e9586db8cb132a1c`;
 
+
 let peliculasValor = document.querySelector (".padreValoradas");
 let peliculasVistas = document.querySelector ("#segunda");
 let seriesPopu = document.querySelector ("#tercera");
@@ -37,6 +38,8 @@ let serValor = document.querySelector ("#cuarta")
      console.log(`El error es ${error}`); 
      return error;
  });
+
+
 
  fetch(pelisMasVisto)
  .then(function (response) {
