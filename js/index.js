@@ -76,7 +76,7 @@ let serValor = document.querySelector ("#cuarta")
      console.log(data); 
      let peliculas3 = "";
      for (let i = 0; i < 4; i++) { 
-         let dato3 = data.results[i].title;
+         let dato3 = data.results[i].name;
          peliculas3 += `<div class="peliculasvaloradas">
              <a href="../PI_grupo_2_Chicas/detallePelicula.html">
              <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
