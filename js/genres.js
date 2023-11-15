@@ -20,7 +20,7 @@ fetch(geneross)
     let generos = ""
     for (let i = 0; i < 5; i++) { 
         let dato = data.genres[i].name;
-        generos += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html"> ${dato} </a></li>`
+        generos += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${dato} </a></li>`
     }
    
     generoPelis.innerHTML = generos;

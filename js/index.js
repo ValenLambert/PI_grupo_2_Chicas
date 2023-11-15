@@ -23,7 +23,7 @@ let serValor = document.querySelector ("#cuarta")
      for (let i = 0; i < 4; i++) { 
          let dato = data.results[i].title;
          peliculas += `<div class="peliculasvaloradas">
-             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}">
+             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
              <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
              <h3 class="titulospelicula" >${dato}</h3>
              <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
@@ -51,7 +51,7 @@ let serValor = document.querySelector ("#cuarta")
      for (let i = 0; i < 4; i++) { 
          let dato2 = data.results[i].title;
          peliculas2 += `<div class="peliculasvaloradas">
-             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idVisto=${data.results[i].id}">
+             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=masVisto">           
              <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
              <h3 class="titulospelicula" >${dato2}</h3>
              <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
@@ -78,10 +78,10 @@ let serValor = document.querySelector ("#cuarta")
      for (let i = 0; i < 4; i++) { 
          let dato3 = data.results[i].name;
          peliculas3 += `<div class="peliculasvaloradas">
-             <a href="../PI_grupo_2_Chicas/detallePelicula.html">
+             <a href="../PI_grupo_2_Chicas/detalleSerie.html?idSerie=${data.results[i].genre_ids[0]}&seccion=seriesPopulares ">
              <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
              <h3 class="titulospelicula" >${dato3}</h3>
-             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
+             <p class="tituloestreno">Fecha de estreno: ${data.results[i].first_air_date}</p>
              <a/>
              </div>`;
      }
