@@ -9,6 +9,8 @@ let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 let padreValoradas = document.querySelector (".padreValoradas");
 
 let pelis_valoradas = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
+let seriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`;
+
 console.log(pelis_valoradas);
 
 fetch(pelis_valoradas)

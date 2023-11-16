@@ -1,48 +1,13 @@
 // creo boton de ver recomendaciones para peliculas 
-
-
 let button = document.querySelector(".verRecomendaciones")
 let pelis_recomendadas = `https://api.themoviedb.org/3/movie/top_rated?api_key=42737f60c529bfe7e9586db8cb132a1c`;
-let peliculasReco = document.querySelector (".sugerido");
-
-button.addEventListener("click", function(){
-    fetch(pelis_recomendadas)
- .then(function (response) {
-     return response.json();
- })
- .then(function (data) {
-     console.log(data); 
-
-     let peliculas = "";
-     for (let i = 0; i < 4; i++) { 
-         let dato = data.results[i].title;
-         peliculas += `<div class="peliculasvaloradas">
-             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
-             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
-             <h3 class="titulospelicula" >${dato}</h3>
-             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
-             <a/>
-             </div>`;
-     }
-    
-     peliculasReco.innerHTML = peliculas;
-     return data;
- })
- .catch(function (error) {
-     console.log(`El error es ${error}`); 
-     return error;
- });
-
-});
-
-
 let qs = location.search;
 let qsObj = new URLSearchParams (qs);
 let idPersonaje = qsObj.get ("idPersonaje");
 let seccion = qsObj.get("seccion");
 let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 let apiUrl = '';
-
+let recomendadas = document.querySelector(".sugerido");
 if (seccion === 'valoradas') {
     apiUrl = `https://api.themoviedb.org/3/movie/${idPersonaje}?api_key=${apiKey}`;
 } else if (seccion === 'masVisto') {
@@ -75,7 +40,7 @@ fetch(apiUrl)
         cantidad_generos +=1;
     }
     if (cantidad_generos>1) {
-        detalle2= `<p class="Estreno">Fecha de estreno: ${data.release_date}</p>
+        detalle2 = `<p class="Estreno">Fecha de estreno: ${data.release_date}</p>
         <p>Rating: ${data.vote_average}</p>
         <p>Duración: ${data.runtime} minutos</p>
         <div class="btns">
@@ -85,7 +50,7 @@ fetch(apiUrl)
         </div>
         <button>Agregar a favoritos</button>`;
     } else if (cantidad_generos=1) {
-        detalle2= `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
+        detalle2 = `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
         <p>Rating: ${data.vote_average}</p>
         <p>Duración: ${data.runtime} minutos</p>
         <div class="btns">
@@ -95,7 +60,6 @@ fetch(apiUrl)
         <button>Agregar a favoritos</button>`;
     }
     cambioSegundo.innerHTML =detalle2;
-
     return data;
 
 })
@@ -104,3 +68,35 @@ fetch(apiUrl)
     console.log(`El error es ${error}`); 
     return error;
 });
+
+button.addEventListener("click", function(){
+    fetch(pelis_recomendadas)
+ .then(function (response) {
+     return response.json();
+ })
+ .then(function (data) {
+     console.log(data); 
+
+     let peliculas = "";
+     for (let i = 0; i < 4; i++) { 
+         let dato = data.results[i].title;
+         peliculas += ` 
+             <div class="peliculasvaloradas">
+             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
+             <h3 class="titulospelicula" >${dato}</h3>
+             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
+             <a/>
+             </div>`;
+             
+     }
+     recomendadas.innerHTML =peliculas;
+     return data;
+ })
+ .catch(function (error) {
+     console.log(`El error es ${error}`); 
+     return error;
+ });
+
+});
+

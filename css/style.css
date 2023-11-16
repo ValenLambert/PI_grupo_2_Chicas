@@ -302,7 +302,7 @@ a::before {
     margin-bottom: 20px;
     border: 1px solid rgba(61, 61, 171, 0.688);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom: solid 5px rgba(10, 83, 218, 0.563);
@@ -379,6 +379,7 @@ a::before {
     .Padredetalle2 {
         max-width: 294px;
     }
+
 
     .detallepelicula_div {
         display: flex;
@@ -485,3 +486,11 @@ a::before {
         margin-left: 29px;
     }
 }
+
+.sugerido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 20px;
+  }

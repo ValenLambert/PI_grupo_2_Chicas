@@ -7,7 +7,7 @@ let pelis_valoradas = `https://api.themoviedb.org/3/search/movie?api_key=${apiKe
 console.log(pelis_valoradas);
 let peliculasValor = document.querySelector (".padreValoradas");
 
-titulo.innerHTML= `Busqueda: <i class="fa-solid fa-magnifying-glass"> ${nombrePelicula}</i>`
+titulo.innerHTML = `Busqueda: <i class="fa-solid fa-magnifying-glass"> No hay resultado para su busqueda </i>`;
 
 fetch(pelis_valoradas)
 .then(function (response) {
@@ -19,14 +19,18 @@ fetch(pelis_valoradas)
     for (let i = 0; i < 4; i++) { 
         let dato = data.results[i].title;
         peliculas += `<div class="peliculasvaloradas">
-            <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}">
+            <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">
             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
             <h3 class="titulospelicula" >${dato}</h3>
             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
             <a/>
             </div>`;
     }
-   
+
+    if (data.results.length >= 1) {
+        titulo.innerHTML = `Busqueda: <i class="fa-solid fa-magnifying-glass"> ${nombrePelicula}</i>`;
+    } 
+    
     peliculasValor.innerHTML = peliculas;
 
 })
@@ -34,3 +38,4 @@ fetch(pelis_valoradas)
     console.log(`El error es ${error}`); 
     return error;
 });
+
