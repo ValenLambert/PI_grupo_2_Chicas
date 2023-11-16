@@ -1,3 +1,41 @@
+// creo boton de ver recomendaciones para peliculas 
+
+
+let button = document.querySelector(".verRecomendaciones")
+let pelis_recomendadas = `https://api.themoviedb.org/3/movie/top_rated?api_key=42737f60c529bfe7e9586db8cb132a1c`;
+let peliculasReco = document.querySelector (".sugerido");
+
+button.addEventListener("click", function(){
+    fetch(pelis_recomendadas)
+ .then(function (response) {
+     return response.json();
+ })
+ .then(function (data) {
+     console.log(data); 
+
+     let peliculas = "";
+     for (let i = 0; i < 4; i++) { 
+         let dato = data.results[i].title;
+         peliculas += `<div class="peliculasvaloradas">
+             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
+             <h3 class="titulospelicula" >${dato}</h3>
+             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
+             <a/>
+             </div>`;
+     }
+    
+     peliculasReco.innerHTML = peliculas;
+     return data;
+ })
+ .catch(function (error) {
+     console.log(`El error es ${error}`); 
+     return error;
+ });
+
+});
+
+
 let qs = location.search;
 let qsObj = new URLSearchParams (qs);
 let idPersonaje = qsObj.get ("idPersonaje");

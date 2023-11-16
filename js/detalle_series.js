@@ -1,3 +1,42 @@
+// creo boton de ver recomendaciones para peliculas 
+let button = document.querySelector(".verRecoSeries")  
+let reco = document.querySelector(".sugerido")
+let pelis_recomendadasSeries = "api"
+
+
+button.addEventListener("click", function(){
+    fetch(pelis_recomendadasSeries)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data); 
+   
+        let peliculas = "";
+        for (let i = 5; i < 7; i++) { 
+            let dato = data.results[i].title;
+            peliculas += `<div class="peliculasvaloradas">
+                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+                <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
+                <h3 class="titulospelicula" >${dato}</h3>
+                <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
+                <a/>
+                </div>`;
+        }
+       
+        reco.innerHTML = peliculas;
+        return data;
+    })
+    .catch(function (error) {
+        console.log(`El error es ${error}`); 
+        return error;
+    });
+   
+   });
+   
+
+
+
 let qs = location.search;
 let qsObj = new URLSearchParams (qs);
 let idSerie = qsObj.get ("idSerie");
