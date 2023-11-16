@@ -43,7 +43,7 @@ fetch(apiUrl)
         <div class="btns">
             <p>Géneros:</p>
             <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${data.genres[0].name} </a></li>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.htmlidGenero=${data.genres[1].id}&seccion=${data.genres[0].name}"> ${data.genres[1].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[1].id}&seccion=${data.genres[1].name}"> ${data.genres[1].name} </a></li>
         </div>
         <button>Agregar a favoritos</button>`;
     } else if (cantidad_generos=1) {

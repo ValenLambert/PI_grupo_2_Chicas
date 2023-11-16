@@ -8,10 +8,8 @@ let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 
 let padreValoradas = document.querySelector (".padreValoradas");
 
-let pelis_valoradas = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`;
-
-titulos_genero.innerHTML= `<a href="./genero.html"> Género ${seccion}</a>`;
-peliculas_de_genero.innerText= `Peliculas de ${seccion}`;
+let pelis_valoradas = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
+console.log(pelis_valoradas);
 
 fetch(pelis_valoradas)
 .then(function (response) {
@@ -24,16 +22,20 @@ fetch(pelis_valoradas)
     for (let i = 0; i < 20; i++) { 
         if (data.results[i].genre_ids[0] === parseInt(idSerie) || data.results[i].genre_ids[1] === parseInt(idSerie)) {
             total+=1
+            titulos_genero.innerHTML= `<a href="./genero.html"> Género ${seccion}</a>`;
+            peliculas_de_genero.innerText= `Peliculas de ${seccion}`;   
             if (total<5) {
                 let dato = data.results[i].title;
                 peliculas += `<div class="peliculasvaloradas">
                     <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
                     <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
-                    <h3 class="titulospelicula" >${data.results[i].name}</h3>
-                    <p class="tituloestreno">Fecha de estreno: ${data.results[i].first_air_date}</p>
+                    <h3 class="titulospelicula" >${data.results[i].title}</h3>
+                    <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
                     <a/>
                     </div>`
-            };
+            }else if (i===0) {
+                titulos_genero.innerHTML= `<a href="./genero.html"> ERROR, el genero no existe</a>`;
+            } i;
         }
     }
    
