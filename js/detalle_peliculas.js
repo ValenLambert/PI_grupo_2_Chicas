@@ -73,7 +73,7 @@ let movieId = urlParams.get('idPersonaje');
 console.log('ID de la película:', movieId);
 
 let button = document.querySelector(".verRecomendaciones") 
-let change = document.querySelector(".padreValoradas1")
+let change = document.querySelector(".padreValoradas11")
 let divPeliculasRecomendadas = document.querySelector(".peliculasRecomendadas");
 let pelis_recomendadas = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey1}&language=en-US&page=1`;
 
