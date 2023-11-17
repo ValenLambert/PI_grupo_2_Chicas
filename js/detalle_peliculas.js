@@ -79,27 +79,26 @@ let pelis_recomendadas = `https://api.themoviedb.org/3/movie/${movieId}/recommen
 
 
 button.addEventListener("click", function(){
-change.style.display="flex"
+    change.style.display="flex";
     fetch(pelis_recomendadas)
- .then(function (response) {
+    .then(function (response) {
     console.log(response)
-     return response.json();
+    return response.json();
  })
- .then(function (data) {
-     console.log(data); 
-
-     let peliculas = "";
-     for (let i = 0; i < 4; i++) { 
-         let dato = data.results[i].title;
-         peliculas += ` 
-         <div class=" padreValoradas peliculasRecomendadas">
-         <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
-         <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
-         <h3 class="titulospelicula" >${dato}</h3>
-         <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
-         </a>
-         </div>`;
-             
+    .then(function (data) {
+        console.log(data); 
+        let peliculas = "";
+        for (let i = 0; i < 4; i++) { 
+            let dato = data.results[i].title;
+            peliculas += ` 
+            <div class=" padreValoradas peliculasRecomendadas">
+            <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+            <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
+            <h3 class="titulospelicula" >${dato}</h3>
+            <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
+            </a>
+            </div>`;
+                
      }
      change.innerHTML =peliculas;
      return data;
