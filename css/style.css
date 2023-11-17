@@ -310,6 +310,34 @@ a::before {
     border-right: solid 5px rgba(10, 83, 218, 0.563);
 }
 
+/*Recomendaciones peliculas */ 
+.peliculasRecomendadas {
+    background-color: rgba(10, 83, 218, 0.563);
+    padding: 35px 8px;
+    margin: -156px;
+    width: 187px;
+    height: 334px;
+    text-align: center;
+    border: solid 5px rgba(61, 61, 171, 0.688);
+    border-radius: 20px;
+}
+
+.Padredetalle3 {
+    background-color: rgba(76, 122, 207, 0.563);
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 1px solid rgba(61, 61, 171, 0.688);
+
+    align-items: flex-end;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: solid 5px rgba(10, 83, 218, 0.563);
+    border-left: solid 5px rgba(10, 83, 218, 0.563);
+    border-right: solid 5px rgba(10, 83, 218, 0.563);
+}
+
 .detallepelicula_div {
     display: flex;
     align-items: center;

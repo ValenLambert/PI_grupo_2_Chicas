@@ -1,5 +1,5 @@
-let qs = location.search;
-let qsObj = new URLSearchParams (qs);
+let q_s = location.search;
+let qsObj = new URLSearchParams (q_s);
 let nombrePelicula = qsObj.get ("nombrePelicula");
 let titulo= document.querySelector (".Titulosbusqueda");
 let apiKey = '42737f60c529bfe7e9586db8cb132a1c';

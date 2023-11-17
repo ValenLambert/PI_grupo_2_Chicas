@@ -1,17 +1,15 @@
-// creo boton de ver recomendaciones para peliculas 
-let button = document.querySelector(".verRecomendaciones")
-let pelis_recomendadas = `https://api.themoviedb.org/3/movie/top_rated?api_key=42737f60c529bfe7e9586db8cb132a1c`;
-let qs = location.search;
-let qsObj = new URLSearchParams (qs);
-let idPersonaje = qsObj.get ("idPersonaje");
-let seccion = qsObj.get("seccion");
-let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
+
+let qs1 = location.search;
+let qsObjj = new URLSearchParams (qs1);
+let idPersonaje = qsObjj.get ("idPersonaje");
+let seccion = qsObjj.get("seccion");
+let apiKey1 = '42737f60c529bfe7e9586db8cb132a1c';
 let apiUrl = '';
 let recomendadas = document.querySelector(".sugerido");
 if (seccion === 'valoradas') {
-    apiUrl = `https://api.themoviedb.org/3/movie/${idPersonaje}?api_key=${apiKey}`;
+    apiUrl = `https://api.themoviedb.org/3/movie/${idPersonaje}?api_key=${apiKey1}`;
 } else if (seccion === 'masVisto') {
-    apiUrl = `https://api.themoviedb.org/3/movie/${idPersonaje}?api_key=${apiKey}`;
+    apiUrl = `https://api.themoviedb.org/3/movie/${idPersonaje}?api_key=${apiKey1}`;
 }
 
 let texto2 = document.querySelector (".Texto2");
@@ -69,9 +67,20 @@ fetch(apiUrl)
     return error;
 });
 
+// creo boton de ver recomendaciones para peliculas 
+const urlParams = new URLSearchParams(window.location.search);
+let movieId = urlParams.get('idPersonaje');
+console.log('ID de la película:', movieId);
+
+let button = document.querySelector(".verRecomendaciones") 
+let change = document.querySelector(".padreValoradas")
+let pelis_recomendadas = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey1}&language=en-US&page=1`;
+
+
 button.addEventListener("click", function(){
     fetch(pelis_recomendadas)
  .then(function (response) {
+    console.log(response)
      return response.json();
  })
  .then(function (data) {
@@ -81,16 +90,16 @@ button.addEventListener("click", function(){
      for (let i = 0; i < 4; i++) { 
          let dato = data.results[i].title;
          peliculas += ` 
-             <div class="peliculasvaloradas">
-             <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
-             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
-             <h3 class="titulospelicula" >${dato}</h3>
-             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
-             <a/>
-             </div>`;
+         <div class="peliculasvaloradas">
+         <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+         <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
+         <h3 class="titulospelicula" >${dato}</h3>
+         <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
+         </a>
+         </div>`;
              
      }
-     recomendadas.innerHTML =peliculas;
+     change.innerHTML =peliculas;
      return data;
  })
  .catch(function (error) {
