@@ -1,7 +1,16 @@
-// creo boton de ver recomendaciones para peliculas 
-let button = document.querySelector(".verRecoSeries")  
-let reco = document.querySelector(".sugerido")
-let pelis_recomendadasSeries = "api"
+// creo boton de ver recomendaciones para series 
+// 
+/* LO DEJO COMENTADO PORQUE TENGO QUE CHEQUEAR ALGO 
+
+const urlParamsSeries = new URLSearchParams(window.location.search);
+let movieIdSeries = urlParamsSeries.get('idSerie');
+console.log('ID de la serie:', movieIdSeries);
+ let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
+
+let button = document.querySelector(".recoSerie")  
+let reco = document.querySelector(".padreValoradas")
+let pelis_recomendadasSeries = `https://api.themoviedb.org/3/movie/${movieIdSeries}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
+
 
 
 button.addEventListener("click", function(){
@@ -15,12 +24,12 @@ button.addEventListener("click", function(){
         let peliculas = "";
         for (let i = 5; i < 7; i++) { 
             let dato = data.results[i].title;
-            peliculas += `<div class="peliculasvaloradas">
-                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+            peliculas += `<div class="peliculasvaloradas peliculasRecomendadas">
+                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idSerie=${data.results[i].id}&seccion=seriesPopulares">            
                 <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
                 <h3 class="titulospelicula" >${dato}</h3>
                 <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
-                <a/>
+                </a>
                 </div>`;
         }
        
@@ -33,8 +42,8 @@ button.addEventListener("click", function(){
     });
    
    });
-   
-
+    
+*/
 
 
 let qs = location.search;

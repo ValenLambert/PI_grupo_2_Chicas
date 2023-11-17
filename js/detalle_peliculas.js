@@ -90,7 +90,7 @@ button.addEventListener("click", function(){
      for (let i = 0; i < 4; i++) { 
          let dato = data.results[i].title;
          peliculas += ` 
-         <div class="peliculasvaloradas">
+         <div class="peliculasvaloradas peliculasRecomendadas" >
          <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
          <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
          <h3 class="titulospelicula" >${dato}</h3>
