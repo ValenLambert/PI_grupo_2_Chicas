@@ -21,7 +21,7 @@ if (es === 'Pelicula') {
         console.log(data); 
         let peliculas = "";
         for (let i = 0; i < 4; i++) {  
-            peliculas += `<div class="peliculasvaloradas">
+            peliculas += `<div class="peliculasvaloradas padreValoradas">
                 <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
                 <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
                 <h3 class="titulospelicula" >${data.results[i].title}</h3>
@@ -52,7 +52,7 @@ if (es === 'Pelicula') {
         console.log(data); 
         let peliculas = "";
         for (let i = 0; i < 4; i++) {  
-            peliculas +=  `<div class="peliculasvaloradas">
+            peliculas +=  `<div class="peliculasvaloradas padreValoradas">
             <a href="../PI_grupo_2_Chicas/detalleSerie.html?idSerie=${data.results[i].id}&seccion=seriesPopulares">            
             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
             <h3 class="titulospelicula" >${data.results[i].name}</h3>
