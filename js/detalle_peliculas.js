@@ -184,7 +184,6 @@ btn.addEventListener("click", function(e){
     }
 })
 
-/*Esto no anda*/
 let favoritas = document.querySelector("#favoritas");
 console.log(peliculasEnFavorito);
 
