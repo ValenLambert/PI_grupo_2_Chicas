@@ -3,12 +3,15 @@
 // LO DEJO COMENTADO PORQUE TENGO QUE CHEQUEAR ALGO 
 
 const urlParamsSeries = new URLSearchParams(window.location.search);
-let movieIdSeries = urlParamsSeries.get('idSerie');
+let movieIdSeries = urlParamsSeries.get("idSeries");
 console.log('ID de la serie:', movieIdSeries);
+console.log("ID de la serie:", movieIdSeries);
+
 let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 
 let button = document.querySelector(".recoSerie")  
-let reco = document.querySelector(".padreValoradas")
+let reco = document.querySelector(".padreValoradas1")
+let seriesRe = document.querySelector(".peliculasRecomendadas")
 let pelis_recomendadasSeries = `https://api.themoviedb.org/3/movie/${movieIdSeries}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
 
 
@@ -43,7 +46,7 @@ button.addEventListener("click", function(){
    
    });
     
-
+//
 
 
 let qs = location.search;
