@@ -159,5 +159,46 @@ fetch(reviewsUrl)
     });
 
 
-    // BOTON DE TRAILER 
-    
+   
+    // TRAILERS 
+
+fetch(`https://api.themoviedb.org/3/tv/${idSerie}/videos?api_key=${apiKey1}`)
+.then(response => response.json())
+.then(data => {
+  if (data.results && data.results.length > 0) {
+    // aca estoy buscando los resultados para obtener solo los videos de YouTube
+    const videosYouTube = data.results.filter(video => video.site.toLowerCase() === 'youtube');
+    if (videosYouTube.length > 0) {
+      const primerVideo = videosYouTube[0];
+      const videoId = primerVideo.key;
+      const videoURL = `https://www.youtube.com/embed/${videoId}`;
+
+     
+      const videoFrame = document.querySelector('.videoFrame');
+      videoFrame.src = videoURL;
+
+      //aca oculto el mensaje de "No hay trailers disponibles" si los hubo
+      const mensajeNoTrailers = document.querySelector('.NoTrailers');
+      mensajeNoTrailers.style.display = 'none';
+    } else {
+      // si no hubo trailer, q me oculte el contenedor del video
+      const videoFrame = document.querySelector('.videoFrame');
+      videoFrame.style.display = 'none';
+
+      // ahora si, q me muestre el mensaje de "No hay trailers disponibles"
+      const mensajeNoTrailers = document.querySelector('.NoTrailers');
+      mensajeNoTrailers.style.display = 'block';
+    }
+  } else {
+    // sino q me oculte el contenedor del video
+    const videoFrame = document.querySelector('.videoFrame');
+    videoFrame.style.display = 'none';
+
+    // y q me muestre el el mensaje de "No hay trailers disponibles"
+    const mensajeNoTrailers = document.querySelector('.NoTrailers');
+    mensajeNoTrailers.style.display = 'block';
+  }
+})
+.catch(error => {
+  console.error('Error al obtener videos:', error);
+});

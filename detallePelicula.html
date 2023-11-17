@@ -63,15 +63,25 @@
 
     </section>
     <section class="Padredetalle3">
+
         <div class="Estrenodetalle">
         </div>
         <button class="btn">Agregar a favoritos</button>
 
         <div class= "comentarios"></div> 
-        <div class="trailers"></div>
+
         <button class="leerMasComentarios">Leer más comentarios</button>
         <div class="comentariosAdicionales"></div>
+        <br>
 
+        <!-- Contenedor para el trailer -->
+        <div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slider="center: true">
+            <iframe class="videoFrame estiloTrailer" width="560" height="315" frameborder="0" allowfullscreen uk-slider-item="previous"></iframe>
+        </div>
+
+        <p id="NoTrailers" class="uk-position-center-left uk-position-small uk-hidden-hover">No hay trailers disponibles.</p>
+
+        <br>
         <button class="verRecomendaciones"> Ver Recomendaciones </button>
 
         <div  class="padreValoradas1" id="tercera">

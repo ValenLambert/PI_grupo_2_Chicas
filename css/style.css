@@ -350,6 +350,19 @@ a::before {
     padding: 80px;
 }
 
+
+.estiloTrailer{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top: solid 5px rgba(51, 112, 225, 0.563);
+    border-bottom: solid 5px rgba(51, 112, 225, 0.563);
+    border-left:solid 5px rgba(51, 112, 225, 0.563);
+    border-right: solid 5px rgba(51, 112, 225, 0.563);
+    align-items: center;
+}
+
 /*creo una prop para el div oculto de recomendaciones*/
 .padreValoradas11 {
     display: none; /* Oculta el div inicialmente */
