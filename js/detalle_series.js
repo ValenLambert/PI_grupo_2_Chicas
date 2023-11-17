@@ -5,7 +5,7 @@
 const urlParamsSeries = new URLSearchParams(window.location.search);
 let movieIdSeries = urlParamsSeries.get('idSerie');
 console.log('ID de la serie:', movieIdSeries);
- let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
+let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 
 let button = document.querySelector(".recoSerie")  
 let reco = document.querySelector(".padreValoradas")
@@ -50,7 +50,6 @@ let qs = location.search;
 let qsObj = new URLSearchParams (qs);
 let idSerie = qsObj.get ("idSerie");
 let seccion = qsObj.get("seccion");
-let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 let apiUrl = '';
 
 if (seccion === 'seriesPopulares') {

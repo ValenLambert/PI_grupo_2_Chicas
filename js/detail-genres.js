@@ -8,7 +8,7 @@ let es = qsObj.get("es");
 let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 let padreValoradas = document.querySelector (".padreValoradas");
 let url = "";
-titulos_genero.innerHTML= `<a href="./genero.html"> Género ${seccion}</a>`;
+titulos_genero.innerHTML= `<a href="./genero.html"> Género: ${seccion}</a>`;
 
 if (es === 'Pelicula') {
     url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${idSerie}`;
@@ -28,6 +28,9 @@ if (es === 'Pelicula') {
                 <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
                 <a/>
                 </div>`;
+            }
+            if (peliculas==="") {
+                peliculas_de_genero.innerText= `No se encontraron resultados para su busqueda`; 
             }
             padreValoradas.innerHTML = peliculas;
             return data;
@@ -56,6 +59,9 @@ if (es === 'Pelicula') {
             <p class="tituloestreno">Fecha de estreno: ${data.results[i].first_air_date}</p>
             <a/>
             </div>`;
+            }
+            if (peliculas==="") {
+                peliculas_de_genero.innerText= `No se encontraron resultados para su busqueda`; 
             }
             padreValoradas.innerHTML = peliculas;
             return data;
