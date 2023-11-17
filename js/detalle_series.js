@@ -1,6 +1,6 @@
 // creo boton de ver recomendaciones para series 
 // 
-/* LO DEJO COMENTADO PORQUE TENGO QUE CHEQUEAR ALGO 
+// LO DEJO COMENTADO PORQUE TENGO QUE CHEQUEAR ALGO 
 
 const urlParamsSeries = new URLSearchParams(window.location.search);
 let movieIdSeries = urlParamsSeries.get('idSerie');
@@ -22,7 +22,7 @@ button.addEventListener("click", function(){
         console.log(data); 
    
         let peliculas = "";
-        for (let i = 5; i < 7; i++) { 
+        for (let i = 0; i < 4; i++) { 
             let dato = data.results[i].title;
             peliculas += `<div class="peliculasvaloradas peliculasRecomendadas">
                 <a href="../PI_grupo_2_Chicas/detallePelicula.html?idSerie=${data.results[i].id}&seccion=seriesPopulares">            
@@ -43,14 +43,13 @@ button.addEventListener("click", function(){
    
    });
     
-*/
 
 
 let qs = location.search;
 let qsObj = new URLSearchParams (qs);
 let idSerie = qsObj.get ("idSerie");
 let seccion = qsObj.get("seccion");
-let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
+
 let apiUrl = '';
 
 if (seccion === 'seriesPopulares') {
