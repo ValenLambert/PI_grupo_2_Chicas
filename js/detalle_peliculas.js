@@ -45,8 +45,7 @@ fetch(apiUrl)
             <p>Géneros:</p>
             <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[0].name} </a></li>
             <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[1].id}&seccion=${data.genres[1].name}&es=Pelicula"> ${data.genres[1].name} </a></li>
-        </div>
-        <button>Agregar a favoritos</button>`;
+        </div>`;
     } else if (cantidad_generos=1) {
         detalle2 = `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
         <p>Rating: ${data.vote_average}</p>
@@ -54,8 +53,7 @@ fetch(apiUrl)
         <div class="btns">
             <p>Géneros:</p>
             <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[0].name} </a></li>
-        </div>
-        <button>Agregar a favoritos</button>`;
+        </div>`;
     }
     cambioSegundo.innerHTML =detalle2;
     return data;
@@ -168,3 +166,56 @@ fetch(reviewsUrl)
     .catch(error => {
         console.error(`Error al obtener comentarios: ${error}`);
     });
+
+/*Boton favoritos extra*/
+const btn = document.querySelector(".btn");
+let peliculasEnFavorito = []; 
+
+btn.addEventListener("click", function(e){
+    if (btn.innerText === "Agregar a favoritos") {
+        btn.style.backgroundColor = "#102032";
+        btn.innerText = "Sacar de favoritos";
+        peliculasEnFavorito.push(idPersonaje);
+    } else {
+        btn.style.backgroundColor = "white";
+        btn.style.color = "black";
+        btn.innerText = "Agregar a favoritos";
+        peliculasEnFavorito = peliculasEnFavorito.filter(id => id !== idPersonaje);
+    }
+})
+
+/*Esto no anda*/
+let favoritas = document.querySelector("#favoritas");
+console.log(peliculasEnFavorito);
+
+for (let i = 0; i < peliculasEnFavorito.length; i++) {
+    urlFav = `https://api.themoviedb.org/3/movie/${peliculasEnFavorito[i]}?api_key=${apiKey1}`;
+    fetch(urlFav)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data); 
+        let peliculasFavs = "";
+        for (let i = 0; i < 4; i++) { 
+            let dato = data.results.title;
+            peliculasFavs += `<div class="peliculasvaloradas">
+                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results.id}&seccion=valoradas">            
+                <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results.poster_path}" class="imagen"></img>
+                <h3 class="titulospelicula" >${dato}</h3>
+                <p class="tituloestreno">Fecha de estreno: ${data.results.release_date}</p>
+                <a/>
+                </div>`;
+        }
+        favoritas.innerHTML = peliculasFavs;
+        return data;
+    })
+    .catch(function (error) {
+        console.log(`El error es ${error}`); 
+        return error;
+    });
+    
+}
+
+
+
