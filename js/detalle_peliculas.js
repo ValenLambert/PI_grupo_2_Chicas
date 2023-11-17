@@ -73,11 +73,13 @@ let movieId = urlParams.get('idPersonaje');
 console.log('ID de la película:', movieId);
 
 let button = document.querySelector(".verRecomendaciones") 
-let change = document.querySelector(".padreValoradas")
+let change = document.querySelector(".padreValoradas1")
+let divPeliculasRecomendadas = document.querySelector(".peliculasRecomendadas");
 let pelis_recomendadas = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey1}&language=en-US&page=1`;
 
 
 button.addEventListener("click", function(){
+change.style.display="flex"
     fetch(pelis_recomendadas)
  .then(function (response) {
     console.log(response)
@@ -90,7 +92,7 @@ button.addEventListener("click", function(){
      for (let i = 0; i < 4; i++) { 
          let dato = data.results[i].title;
          peliculas += ` 
-         <div class="peliculasvaloradas peliculasRecomendadas " >
+         <div class=" padreValoradas peliculasRecomendadas">
          <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
          <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
          <h3 class="titulospelicula" >${dato}</h3>
@@ -109,3 +111,61 @@ button.addEventListener("click", function(){
 
 });
 
+// BOTON DE REVIEWS 
+const reviewsUrl = `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${apiKey1}&language=en-US&page=1`;
+const comentarios = document.querySelector(".comentarios"); 
+
+const comentariosAdicionalesContainer = document.querySelector(".comentariosAdicionales");
+const leerMasComentariosButton = document.querySelector(".leerMasComentarios");
+
+let comentariosIniciales = 1;
+
+fetch(reviewsUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error de red: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+
+        if (data.results && data.results.length > 0) {
+    
+            let comentariosHTML = "<h2>Comentarios de Usuarios</h2>";
+            const primerComentario = data.results[0];
+            comentariosHTML += `
+                <div class="comentario">
+                    <p><strong>Autor:</strong> ${primerComentario.author}</p>
+                    <p><strong>Comentario:</strong> ${primerComentario.content}</p>
+                </div>`;
+
+            comentarios.innerHTML = comentariosHTML;
+
+            if (data.results.length > 1) {
+                leerMasComentariosButton.style.display = 'block';
+
+                // Configura el evento de clic para cargar más comentarios
+                leerMasComentariosButton.addEventListener('click', function () {
+                    // Construye el HTML para mostrar comentarios adicionales
+                    let comentariosAdicionalesHTML = '';
+                    for (let i = 1; i < data.results.length; i++) {
+                        const review = data.results[i];
+                        comentariosAdicionalesHTML += `
+                            <div class="comentario">
+                                <p><strong>Autor:</strong> ${review.author}</p>
+                                <p><strong>Comentario:</strong> ${review.content}</p>
+                            </div>`;
+                    }
+                    // Agrega el HTML al contenedor de comentarios adicionales
+                    comentariosAdicionalesContainer.innerHTML = comentariosAdicionalesHTML;
+                });
+            }
+        } else {
+            comentarios.innerHTML = '<p>No hay comentarios disponibles.</p>';
+        }
+        return data;
+    })
+    .catch(error => {
+        console.error(`Error al obtener comentarios: ${error}`);
+    });

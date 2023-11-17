@@ -338,6 +338,24 @@ a::before {
     border-right: solid 5px rgba(10, 83, 218, 0.563);
 }
 
+.padreValoradas1 {
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 80px 138px;
+    padding: 80px;
+}
+
+/*creo una prop para el div oculto de recomendaciones*/
+#miDivOculto {
+    display: none; /* Oculta el div inicialmente */
+  }
+
+
 .detallepelicula_div {
     display: flex;
     align-items: center;
