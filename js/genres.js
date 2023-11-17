@@ -20,7 +20,7 @@ fetch(geneross)
     let generos = ""
     for (let i = 0; i < 5; i++) { 
         let dato = data.genres[i].name;
-        generos += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${dato} </a></li>`
+        generos += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[i].id}&seccion=${data.genres[i].name}&es=Pelicula"> ${data.genres[i].name} </a></li>`
     }
    
     generoPelis.innerHTML = generos;
@@ -43,7 +43,7 @@ fetch(geneross)
     let gene2 = ""
     for (let i = 5; i < 10; i++) { 
         let dato = data.genres[i].name;
-        gene2 += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[i].id}&seccion=${data.genres[i].name}"> ${dato} </a></li>`
+        gene2 += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[i].id}&seccion=${data.genres[i].name}&es=Pelicula"> ${data.genres[i].name} </a></li>`
     }
    
     generoSegunda.innerHTML = gene2;
@@ -67,7 +67,7 @@ fetch(generosSeries)
     let geneSer = ""
     for (let i = 0; i < 5; i++) { 
         let dato = data.genres[i].name;
-        geneSer += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${dato} </a></li>`
+        geneSer += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[i].id}&seccion=${data.genres[i].name}&es=Serie"> ${dato} </a></li>`
     }
    
     generoSeries1.innerHTML = geneSer;
@@ -92,7 +92,7 @@ fetch(generosSeries)
     let geneSer2 = ""
     for (let i = 5; i < 10; i++) { 
         let dato = data.genres[i].name;
-        geneSer2 += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${dato} </a></li>`
+        geneSer2 += `<li class="GeneroPeliculas"> <a href="./detalleGenero.html?idGenero=${data.genres[i].id}&seccion=${data.genres[i].name}&es=Serie"> ${dato} </a></li>`
     }
    
     generoSeries2.innerHTML = geneSer2;

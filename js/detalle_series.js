@@ -45,11 +45,12 @@ button.addEventListener("click", function(){
     
 
 
+
 let qs = location.search;
 let qsObj = new URLSearchParams (qs);
 let idSerie = qsObj.get ("idSerie");
 let seccion = qsObj.get("seccion");
-
+let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
 let apiUrl = '';
 
 if (seccion === 'seriesPopulares') {
