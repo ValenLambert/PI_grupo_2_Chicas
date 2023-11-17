@@ -214,6 +214,3 @@ for (let i = 0; i < peliculasEnFavorito.length; i++) {
     });
     
 }
-
-
-

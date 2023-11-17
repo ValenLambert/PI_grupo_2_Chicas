@@ -157,3 +157,7 @@ fetch(reviewsUrl)
     .catch(error => {
         console.error(`Error al obtener comentarios: ${error}`);
     });
+
+
+    // BOTON DE TRAILER 
+    
