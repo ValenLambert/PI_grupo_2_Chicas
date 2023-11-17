@@ -1,4 +1,3 @@
-
 let qs1 = location.search;
 let qsObjj = new URLSearchParams (qs1);
 let idPersonaje = qsObjj.get ("idPersonaje");

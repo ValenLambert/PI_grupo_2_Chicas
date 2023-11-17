@@ -1,68 +1,14 @@
-// creo boton de ver recomendaciones para series 
-// 
-// LO DEJO COMENTADO PORQUE TENGO QUE CHEQUEAR ALGO 
-
-const urlParamsSeries = new URLSearchParams(window.location.search);
-let movieIdSeries = urlParamsSeries.get("idSeries");
-console.log('ID de la serie:', movieIdSeries);
-console.log("ID de la serie:", movieIdSeries);
-
-let apiKey = '42737f60c529bfe7e9586db8cb132a1c';
-
-let button = document.querySelector(".recoSerie")  
-let reco = document.querySelector(".padreValoradas1")
-let seriesRe = document.querySelector(".peliculasRecomendadas")
-let pelis_recomendadasSeries = `https://api.themoviedb.org/3/movie/${movieIdSeries}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
-
-
-
-button.addEventListener("click", function(){
-    fetch(pelis_recomendadasSeries)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data); 
-   
-        let peliculas = "";
-        for (let i = 0; i < 4; i++) { 
-            let dato = data.results[i].title;
-            peliculas += `<div class="peliculasvaloradas peliculasRecomendadas">
-                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idSerie=${data.results[i].id}&seccion=seriesPopulares">            
-                <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
-                <h3 class="titulospelicula" >${dato}</h3>
-                <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
-                </a>
-                </div>`;
-        }
-       
-        reco.innerHTML = peliculas;
-        return data;
-    })
-    .catch(function (error) {
-        console.log(`El error es ${error}`); 
-        return error;
-    });
-   
-   });
-    
-//
-
-
-let qs = location.search;
-let qsObj = new URLSearchParams (qs);
-let idSerie = qsObj.get ("idSerie");
-let seccion = qsObj.get("seccion");
-let apiUrl = '';
-
-if (seccion === 'seriesPopulares') {
-    apiUrl = `https://api.themoviedb.org/3/tv/${idSerie}?api_key=${apiKey}`;
-} else if (seccion === 'seriesValoradas') {
-    apiUrl = `https://api.themoviedb.org/3/tv/${idSerie}?api_key=${apiKey}`;
-}
-
-let cambio = document.querySelector (".detallepelicula_div")
-let cambioSegundo = document.querySelector (".Estrenodetalle")
+let qs1 = location.search;
+let qsObjj = new URLSearchParams (qs1);
+let idSerie = qsObjj.get ("idSerie");
+let seccion = qsObjj.get("seccion");
+let apiKey1 = '42737f60c529bfe7e9586db8cb132a1c';
+let recomendadas = document.querySelector(".sugerido");
+let apiUrl = `https://api.themoviedb.org/3/tv/${idSerie}?api_key=${apiKey1}`;
+  
+let texto2 = document.querySelector (".Texto2");
+let cambio = document.querySelector (".detallepelicula_div");
+let cambioSegundo =document.querySelector (".Estrenodetalle");
 
 fetch(apiUrl)
 .then(function (response) {
@@ -86,24 +32,22 @@ fetch(apiUrl)
         cantidad_generos +=1;
     }
     if (cantidad_generos>1) {
-        detalle2= `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
+        detalle2 = `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
         <p>Rating: ${data.vote_average}</p>
         <div class="btns">
             <p>Géneros:</p>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[0].name} </a></li>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[1].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[1].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Serie"> ${data.genres[0].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[1].id}&seccion=${data.genres[1].name}&es=Serie"> ${data.genres[1].name} </a></li>
         </div>`;
     } else if (cantidad_generos=1) {
-        detalle2= `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
+        detalle2 = `<p class="Estreno">Fecha de estreno: ${data.first_air_date}</p>
         <p>Rating: ${data.vote_average}</p>
         <div class="btns">
             <p>Géneros:</p>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[0].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Serie"> ${data.genres[0].name} </a></li>
         </div>`;
     }
-    
     cambioSegundo.innerHTML =detalle2;
-
     return data;
 
 })
@@ -112,3 +56,104 @@ fetch(apiUrl)
     console.log(`El error es ${error}`); 
     return error;
 });
+
+// creo boton de ver recomendaciones para peliculas 
+const urlParams = new URLSearchParams(window.location.search);
+let movieId = urlParams.get('idSerie');
+console.log('ID de la serie:', movieId);
+
+let button = document.querySelector(".verRecomendaciones") 
+let change = document.querySelector(".padreValoradas1")
+let divPeliculasRecomendadas = document.querySelector(".peliculasRecomendadas");
+let pelis_recomendadas = `https://api.themoviedb.org/3/tv/${movieId}/recommendations?api_key=${apiKey1}&language=en-US&page=1`;
+
+
+button.addEventListener("click", function(){
+    change.style.display="flex";
+    fetch(pelis_recomendadas)
+    .then(function (response) {
+    return response.json();
+ })
+    .then(function (data) {
+        console.log(data); 
+        let peliculas = "";
+        for (let i = 0; i < 4; i++) { 
+            let dato = data.results[i].name;
+            peliculas += ` 
+            <div class=" padreValoradas peliculasRecomendadas">
+            <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas&es=Pelicula">            
+            <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
+            <h3 class="titulospelicula" >${dato}</h3>
+            <p class="tituloestreno">Fecha de estreno: ${data.results[i].first_air_date}</p>
+            </a>
+            </div>`;
+                
+     }
+     change.innerHTML =peliculas;
+     return data;
+ })
+ .catch(function (error) {
+     console.log(`El error es ${error}`); 
+     return error;
+ });
+
+});
+
+// BOTON DE REVIEWS 
+const reviewsUrl = `https://api.themoviedb.org/3/tv/${movieId}/reviews?api_key=${apiKey1}&language=en-US&page=1`;
+const comentarios = document.querySelector(".comentarios"); 
+
+const comentariosAdicionalesContainer = document.querySelector(".comentariosAdicionales");
+const leerMasComentariosButton = document.querySelector(".leerMasComentarios");
+
+let comentariosIniciales = 1;
+
+fetch(reviewsUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error de red: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+
+        if (data.results && data.results.length > 0) {
+    
+            let comentariosHTML = "<h2>Comentarios de Usuarios</h2>";
+            const primerComentario = data.results[0];
+            comentariosHTML += `
+                <div class="comentario">
+                    <p><strong>Autor:</strong> ${primerComentario.author}</p>
+                    <p><strong>Comentario:</strong> ${primerComentario.content}</p>
+                </div>`;
+
+            comentarios.innerHTML = comentariosHTML;
+
+            if (data.results.length > 1) {
+                leerMasComentariosButton.style.display = 'block';
+
+                // Configura el evento de clic para cargar más comentarios
+                leerMasComentariosButton.addEventListener('click', function () {
+                    // Construye el HTML para mostrar comentarios adicionales
+                    let comentariosAdicionalesHTML = '';
+                    for (let i = 1; i < data.results.length; i++) {
+                        const review = data.results[i];
+                        comentariosAdicionalesHTML += `
+                            <div class="comentario">
+                                <p><strong>Autor:</strong> ${review.author}</p>
+                                <p><strong>Comentario:</strong> ${review.content}</p>
+                            </div>`;
+                    }
+                    // Agrega el HTML al contenedor de comentarios adicionales
+                    comentariosAdicionalesContainer.innerHTML = comentariosAdicionalesHTML;
+                });
+            }
+        } else {
+            comentarios.innerHTML = '<p>No hay comentarios disponibles.</p>';
+        }
+        return data;
+    })
+    .catch(error => {
+        console.error(`Error al obtener comentarios: ${error}`);
+    });
