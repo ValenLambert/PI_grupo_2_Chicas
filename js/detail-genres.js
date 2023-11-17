@@ -22,7 +22,7 @@ if (es === 'Pelicula') {
         let peliculas = "";
         for (let i = 0; i < 4; i++) {  
             peliculas += `<div class="peliculasvaloradas padreValoradas">
-                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+                <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas&es=Pelicula">            
                 <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
                 <h3 class="titulospelicula" >${data.results[i].title}</h3>
                 <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>

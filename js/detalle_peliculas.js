@@ -43,8 +43,8 @@ fetch(apiUrl)
         <p>Duración: ${data.runtime} minutos</p>
         <div class="btns">
             <p>Géneros:</p>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${data.genres[0].name} </a></li>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[1].id}&seccion=${data.genres[1].name}"> ${data.genres[1].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[0].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[1].id}&seccion=${data.genres[1].name}&es=Pelicula"> ${data.genres[1].name} </a></li>
         </div>
         <button>Agregar a favoritos</button>`;
     } else if (cantidad_generos=1) {
@@ -53,7 +53,7 @@ fetch(apiUrl)
         <p>Duración: ${data.runtime} minutos</p>
         <div class="btns">
             <p>Géneros:</p>
-            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}"> ${data.genres[0].name} </a></li>
+            <li class="GeneroPeliculasDetalle"> <a href="./detalleGenero.html?idGenero=${data.genres[0].id}&seccion=${data.genres[0].name}&es=Pelicula"> ${data.genres[0].name} </a></li>
         </div>
         <button>Agregar a favoritos</button>`;
     }
@@ -92,7 +92,7 @@ button.addEventListener("click", function(){
             let dato = data.results[i].title;
             peliculas += ` 
             <div class=" padreValoradas peliculasRecomendadas">
-            <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas">            
+            <a href="../PI_grupo_2_Chicas/detallePelicula.html?idPersonaje=${data.results[i].id}&seccion=valoradas&es=Pelicula">            
             <img class="imagen" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" class="imagen"></img>
             <h3 class="titulospelicula" >${dato}</h3>
             <p class="tituloestreno">Fecha de estreno: ${data.results[i].release_date}</p>
