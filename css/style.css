@@ -399,6 +399,13 @@ a::before {
   
   }
 
+.padreValoradas .gifCarga {
+    max-width: 150px; 
+    max-height: 150px;
+    display: block; 
+    margin: 0 auto;
+}
+
 /* telefono */
 @media (max-width: 420px) {
     .body {
